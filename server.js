@@ -15,7 +15,7 @@ app.get('/token', (req, res) => {
 
   const expire = 3600;
   const now = Math.floor(Date.now() / 1000);
-  const token = RtcTokenBuilder.buildTokenWithUid(APP_ID, APP_CERT, channel, uid, RtcRole.PUBLISHER, now + expire);
+  const token = RtcTokenBuilder.buildTokenWithUid(APP_ID, APP_CERT, channel, uid, RtcRole.PUBLISHER, expire, now);
   res.json({ token, appId: APP_ID, channel, uid });
 });
 
