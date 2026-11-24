@@ -1,4 +1,4 @@
-const express = require('express');
+express = require('express');
 const cors = require('cors');
 const { RtcTokenBuilder, RtcRole } = require('agora-access-token');
 
@@ -23,4 +23,4 @@ app.get('/token', (req, res) => {
 app.get('/', (req, res) => res.send('RDC token server OK'));
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Server en ' + PORT));
+app.listen(PORT, () => console.log('Server en ' + PORT
