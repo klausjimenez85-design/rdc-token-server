@@ -13,7 +13,7 @@ app.get('/token', (req, res) => {
   const uid = parseInt(req.query.uid || '0');
   if (!channel) return res.json({ error: 'falta channel' });
 
- const token = RtcTokenBuilder.buildTokenWithUid(APP_ID, APP_CERT, channel, uid, RtcRole.PUBLISHER, 3600, 3600); 
+ const token = RtcTokenBuilder.buildTokenWithUid(APP_ID, APP_CERT, channel, uid, RtcRole.PUBLISHER, expire, expire);
 
   
   
