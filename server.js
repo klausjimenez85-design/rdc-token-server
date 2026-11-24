@@ -13,9 +13,10 @@ app.get('/token', (req, res) => {
   const uid = parseInt(req.query.uid || '0');
   if (!channel) return res.json({ error: 'falta channel' });
 
-  const expire = 3600;
-  const now = Math.floor(Date.now() / 1000);
-  const token = RtcTokenBuilder.buildTokenWithUid(APP_ID, APP_CERT, channel, uid, RtcRole.PUBLISHER, expire, now);
+  const expire = Math.floor(Date.now() / 1000) + 3600;
+const token = RtcTokenBuilder.buildTokenWithUid(APP_ID, APP_CERT, channel, uid, RtcRole.PUBLISHER, expire, expire);
+  
+  
   res.json({ token, appId: APP_ID, channel, uid });
 });
 
